@@ -1,0 +1,15 @@
+transformers
+transformers[sentencepiece]
+datasets
+pandas
+nltk
+tqdm
+pyYAML
+torch
+notebook
+uvicorn==0.18.3
+Jinja2==3.1.2
+flask
+safetensors
+PyPDF2
+python-docx
