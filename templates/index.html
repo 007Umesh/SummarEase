@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Text Summarizer</title>
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px; 
+            font-style: italic;
+
+            /* Loading spinner styles */
+        .spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ensuring the slider spans the full width */
+        .range-slider-container {
+            display: flex;
+            align-items: center;
+            width: 30%;
+        }
+        
+        .range-slider-container input[type="range"] {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .range-slider-container span {
+            white-space: nowrap;
+        }
+        
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-lato">
+    <!-- NavigationBar -->
+    <nav class="bg-blue-600 p-4 md:p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <div class="text-2xl font-bold text-white">SummarEase</div>
+            <!-- Navigation Links -->
+            <div class="flex space-x-6">
+                <a href="#hero" class="text-lg text-white hover:text-gray-200 transition-colors duration-300">Home</a>
+                <a href="#features" class="text-lg text-white hover:text-gray-200 transition-colors duration-300">Features</a>
+                <a href="#summarizer" class="text-lg text-white hover:text-gray-200 transition-colors duration-300">Summarizer</a>
+                <a href="#contact" class="text-lg text-white hover:text-gray-200 transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HeroSection -->
+<section id="hero" class="bg-blue-600 text-white h-screen flex items-center justify-center relative">
+    <!-- Overlay for better text readability -->
+    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div class="relative z-10 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Effortlessly Summarize Complex Dialogues</h1> <!-- Updated heading -->
+        <p class="text-xl md:text-2xl">Experience the power of AI-driven summarization with SummarEase. Transform lengthy conversations and texts into concise, meaningful summaries.</p> <!-- Updated subheading -->
+    </div>
+</section>
+
+<!-- FeaturesSection -->
+<section id="features" class="py-16 bg-white text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-extrabold mb-12 text-gray-800">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Advanced NLP Technology</h3> <!-- Updated feature title -->
+                <p class="text-gray-600">Utilizing the state-of-the-art Pegasus model fine-tuned on the SAMSum dataset for precise dialogue summarization.</p> <!-- Updated feature detail -->
+            </div>
+            <!-- Feature 2 -->
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">User-Friendly Interface</h3> <!-- Updated feature title -->
+                <p class="text-gray-600">Intuitive design for easy text input, file uploads, and instant summarization.</p> <!-- Updated feature detail -->
+            </div>
+            <!-- Feature 3 -->
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Multi-Format Support</h3> <!-- Updated feature title -->
+                <p class="text-gray-600">Summarize content from plain text effortlessly.</p> <!-- Updated feature detail -->
+            </div>
+            <!-- Feature 4 -->
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Time-Saving</h3> <!-- New feature -->
+                <p class="text-gray-600">Quickly distill key points from extensive texts, enhancing productivity and decision-making.</p> <!-- New feature detail -->
+            </div>
+            <!-- Feature 5 -->
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">High Accuracy</h3> <!-- New feature -->
+                <p class="text-gray-600">Generates summaries that capture the essential context and information from original dialogues.</p> <!-- New feature detail -->
+            </div>
+            <div class="p-8 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Word Limit Restriction</h3>
+                <p class="text-gray-600">Currently, the summarization is limited to 500 tokens, which is approximately 375 words. Don't worry, support for lengthy input texts will be available soon!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SummarizerComponent -->
+<!-- SummarizerComponent -->
+<section id="summarizer" class="py-16 bg-gray-100 text-center">
+    <div class="container mx-auto flex flex-col md:flex-row gap-12">
+        <!-- Input and File Upload Section -->
+        <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+            <form id="summarize-form" method="post" enctype="multipart/form-data">
+                <!-- Textarea for Input Text -->
+                <div class="relative mb-6">
+                    <textarea id="input-text" name="text" placeholder="Enter text to summarize" class="w-full h-64 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 overflow-auto resize-none"></textarea>
+                    <div class="text-right text-gray-600 mt-1" id="input-word-count">Words: 0</div>
+                </div>
+                <!-- File Upload Section -->
+                <div class="flex items-center mb-6">
+                    <input type="file" id="file-upload" name="file" accept=".txt,.pdf,.docx" class="hidden">
+                    <label for="file-upload" class="flex items-center cursor-pointer text-blue-600 hover:text-blue-800">
+                        <i class="fa fa-cloud-upload mr-2" aria-hidden="true"></i> Upload doc
+                    </label>
+                </div>
+                <!-- Summarize Button -->
+                <div class="text-center">
+                    <button id="summarize-btn" type="button" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>Summarize</button>
+                </div>
+            </form>
+        </div>
+        <!-- Output Section -->
+        <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+            <!-- Error Message Section -->
+            <div id="error-message" class="text-red-500 mb-4"></div>
+            <div class="relative mb-6">
+                <textarea id="output-text" placeholder="Summary will appear here" readonly class="w-full h-64 p-4 border border-gray-300 rounded-lg overflow-auto resize-none"></textarea>
+                <div class="text-right text-gray-600 mt-1" id="output-word-count">Words: 0</div>
+            </div>
+            <div class="loading mb-4">
+                <div class="spinner p-3"></div>
+            </div>
+            <div class="text-center flex justify-center space-x-5">
+                <!-- Copy Button -->
+                <button id="copy-btn" onclick="copyText()" class="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">Copy text</button>
+                <!-- Clear Button -->
+                <button id="clear-btn" onclick="clearText()" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Clear</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Contact Me</h2>
+            <div class="flex flex-col lg:flex-row lg:justify-between gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/2 mb-8 lg:mb-0 p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-3xl font-semibold mb-6 text-gray-700">Get in Touch</h3>
+                    <p class="text-lg mb-6 text-gray-600">Feel free to reach out via the form below or contact me directly through email or phone.</p>
+                    <div class="flex items-center mb-5">
+                        <svg class="w-8 h-8 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4v4H3v-4zm0 8h4v4H3v-4zm0-8h4V6H3v4zm14-4h4v4h-4V6zm0 8h4v4h-4v-4zm0-8h4V6h-4v4z"></path>
+                        </svg>
+                        <p class="text-lg text-gray-800">Bangalore, Karnataka , India</p>
+                    </div>
+                    <div class="flex items-center mb-5">
+                        <svg class="w-8 h-8 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                        <p class="text-lg text-gray-800">umeshsgowda770@gmail.com</p>
+                    </div>
+                    <div class="flex items-center mb-5">
+                        <svg class="w-8 h-8 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5v-5h-5v5zm0 0v5h5v-5h-5zM15 7h5V2h-5v5z"></path>
+                        </svg>
+                        <p class="text-lg text-gray-800">8088174820</p>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="lg:w-1/2 mb-8 lg:mb-0 p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Send Me a Message</h3>
+                    <form  onsubmit="sendEmail(); reset(); return false; ">
+                        <div class="mb-4">
+                            <label for="name" class="block text-lg font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-lg font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-lg font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 p-4 md:p-6 text-white">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">Follow us on:</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/umesh-s-75132b1ab/" class="hover:text-gray-300"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/_umesh_s_gowda_/" class="hover:text-gray-300"><i class="fa fa-instagram"></i></a>
+            </div>
+            <p class="mt-4">&copy; 2024 SummarEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+
+</html>
