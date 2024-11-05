@@ -31,6 +31,6 @@ Execute the Notebook: Open dialogue_summarization.ipynb in google collab or any 
 
 ![](images/file%20structre.jpg)
 
-![](images/images/output%201.jpg)
+![](images/output%201.jpg)
 
-![](images/images/output2.jpg)
+![](images/output2.jpg)
