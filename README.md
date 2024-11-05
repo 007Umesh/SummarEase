@@ -28,9 +28,14 @@ Environment Setup: Install the necessary dependencies:
 pip install -r requirements.txt
 
 Execute the Notebook: Open dialogue_summarization.ipynb in google collab or any other cloud service which provide higher GPU for execution and run the cells to replicate the model fine-tuning and summarization.
+<h3>Screenshot of File strructure</h3>
 
 ![](images/file%20structre.jpg)
 
+<h3>Screenshot of output</h3>
+
 ![](images/output%201.jpg)
+
+<h3>Screenshot of output</h3>
 
 ![](images/output2.jpg)
