@@ -30,3 +30,7 @@ pip install -r requirements.txt
 Execute the Notebook: Open dialogue_summarization.ipynb in google collab or any other cloud service which provide higher GPU for execution and run the cells to replicate the model fine-tuning and summarization.
 
 ![](images/file%20structre.jpg)
+
+![](images/images/output%201.jpg)
+
+![](images/images/output2.jpg)
